@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import React from 'react'
+import NavBar from "./components/NavBar.tsx";
+import Paper from '@mui/material/Paper'
+import Introduction from "./components/Introduction.tsx";
+import { Typography } from "@mui/material";
+import { MyTheme } from "./theme.tsx"
+import { ThemeProvider } from '@mui/material/styles'
+
+const theme = MyTheme
+
+function App () {
+    return (
+      <ThemeProvider theme={theme}>
+        <Paper sx={{backgroundColor: '#D2D0BA', display: 'flex', flexDirection: 'column', flexFlow: 'column'}}>
+          <NavBar />
+          <Introduction />
+          <Typography>HI!</Typography>
+        </Paper>           
+        </ThemeProvider>
+    );
+
 }
 
 export default App;
