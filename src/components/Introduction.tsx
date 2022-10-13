@@ -9,8 +9,8 @@ import React from "react";
 
 const classes = {
     navigation: {
-        backgroundColor: 'yellow',
         display: 'grid',
+        backgroundColor: 'theme.palette.secondary.main',
         flexGrow: 1,
         height: '60vh',
         "grid-template-columns": '1fr 1fr 1fr',
@@ -23,7 +23,7 @@ export default function Introduction() {
 
     return (
         <Box sx={classes.navigation}>
-            <Paper sx={{gridColumnStart: 2, gridColumnEnd: 4, gridRowStart: 2, gridRowEnd: 4}}>
+            <Paper variant={'normal'} sx={{gridColumnStart: 2, gridColumnEnd: 4, gridRowStart: 2, gridRowEnd: 4}}>
             <Typography >MyNAME</Typography>
         </Paper>    
         </Box>

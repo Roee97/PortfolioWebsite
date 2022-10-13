@@ -13,7 +13,7 @@ const theme = MyTheme
 function App () {
     return (
       <ThemeProvider theme={theme}>
-        <Paper sx={{backgroundColor: '#D2D0BA', display: 'flex', flexDirection: 'column', flexFlow: 'column'}}>
+        <Paper variant={'normal'} sx={{display: 'flex', flexDirection: 'column', flexFlow: 'column'}}>
           <NavBar />
           <Introduction />
           <Typography>HI!</Typography>
