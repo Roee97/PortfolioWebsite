@@ -4,6 +4,7 @@ import React from 'react'
 declare module '@mui/material/Paper' {
     interface PaperPropsVariantOverrides {
       normal: true;
+      background: true;
     }
   }
 
@@ -12,10 +13,21 @@ declare module '@mui/material/Paper' {
 export const MyTheme = createTheme({
     palette: {
         primary: {
-            main: '#5E747F'
+            main: '#5E6F81'
         },
+        // background colors
         secondary: {
-            main: '#C4C7AB'
+            main: '#CDBDBC',
+            light: '#EEE5E5',
+            dark: '#CAB5B4'
+        },
+        info: {
+            main: '#DDE432'
+        }
+    },
+    typography: {
+        h4: {
+            color: '#281F1B'
         }
     },
     components: {
@@ -24,7 +36,13 @@ export const MyTheme = createTheme({
                 {
                     props: {variant: 'normal'},
                     style: {
-                        backgroundColor: '#C4C7AB'
+                        backgroundColor: '#DDCECD'
+                    }
+                },
+                {
+                    props: {variant: 'background'},
+                    style: {
+                        backgroundColor: '#EEE5E5'
                     }
                 }
             ]

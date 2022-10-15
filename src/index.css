@@ -7,8 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
-  background-color: #D2D0BA;
+  background-color: #EEE5E5;
+  
 }
 
 code {
