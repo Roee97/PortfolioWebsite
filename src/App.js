@@ -6,6 +6,7 @@ import Introduction from "./components/Introduction.tsx";
 import { MyTheme } from "./theme.tsx";
 import { ThemeProvider } from '@mui/material/styles';
 import UpSwitchAnimation from './components/UpSwitchAnimation.tsx'
+import DownSwitchAnimation from './components/DownSwitchAnimation.tsx'
 import ExperienceTimeline from './components/ExperienceTimeline.tsx'
 
 const theme = MyTheme
@@ -25,12 +26,13 @@ function App () {
         <Paper sx={classes.mainPaper}
           variant={'background'}
           >
-          <UpSwitchAnimation 
-          preAnimationChild={<Introduction/>}
-          duringAnimationChild={<Introduction initialAnimation={false} />}
-          postAnimationChild={<ExperienceTimeline />}
+          <DownSwitchAnimation 
+          upperChild={<Introduction/>}
+          duringAnimationUpperChild={<Introduction initialAnimation={false} />}
+          lowerChild={<ExperienceTimeline />}
+          initialComponent='upper'
           >
-          </UpSwitchAnimation>
+          </DownSwitchAnimation>
           {/* <ExperienceTimeline /> */}
         </Paper>           
         </ThemeProvider>

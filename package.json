@@ -49,9 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
-    "eslint-plugin-react": "^7.31.9"
+    "@types/styled-components": "^5.1.26"
   }
 }

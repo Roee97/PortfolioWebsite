@@ -81,7 +81,7 @@ export default function ExperienceTimeline() {
         {data.map((job, index) => {
             const obj = {...job, index} as JobInfo & IndexProp
             return (
-                <TimelineItem>
+                <TimelineItem sx={{maxWidth: '70%', alignSelf: 'center'}}>
                 <TimelineOppositeContent color="text.secondary">
                     {job.workPeriod}
           </TimelineOppositeContent>
