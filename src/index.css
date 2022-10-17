@@ -8,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: hidden;
   min-height: 100vh;
   background-color: #EEE5E5;
   

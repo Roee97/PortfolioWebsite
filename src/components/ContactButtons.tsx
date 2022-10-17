@@ -11,11 +11,11 @@ interface ContactIconButtonsProps {
 }
 
 interface StyledIconButtonProps {
-    animationName: string
+    animationName?: string
     children: React.ReactNode
 }
 
-function StyledIconButton({animationName, children}: StyledIconButtonProps) {
+function StyledIconButton({animationName='', children}: StyledIconButtonProps) {
     const [isHovering, setIsHovering] = useState(false)
     const classes = {
         icon: {

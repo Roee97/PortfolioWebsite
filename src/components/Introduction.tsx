@@ -3,6 +3,7 @@ import { Box, Button, Paper, Theme, Typography, useTheme } from "@mui/material";
 import { url } from "inspector";
 import React, { useEffect, useState } from 'react';
 import { ContactIconButtons } from "./ContactButtons";
+import ContentBox from "./ContentBox";
 import { SvgFilterHoverIn, SvgFilterHoverOut, SvgFilterStart } from "./ImageAnimations";
 
 
@@ -32,14 +33,15 @@ export default function Introduction({initialAnimation=true}: IntroductionProps)
         width: '100%',
         maxHeight: '100%',
         borderRadius: 13,
-        filter: (isPageStart && initialAnimation) ? `url(#startFilter)` : (isHovering ? `url(#hoverInFilter)` : `url(#hoverOutFilter)`)
+        filter: initialAnimation ? (isPageStart ? `url(#startFilter)` : (isHovering ? `url(#hoverInFilter)` : `url(#hoverOutFilter)`)) : ''
+
     },
     paper: {
         display: 'flex',
         justifyContent: 'center',
-        paddingTop: theme.spacing(10),
+        paddingTop: theme.spacing(20),
         paddingBottom: theme.spacing(10),
-        backgroundImage: `linear-gradient(#EEE5E5, ${theme.palette.secondary.dark}, #EEE5E5)`
+        backgroundColor: 'transparent'
     },
     contactIcons: {
         gridRowStart: 5,
@@ -66,27 +68,25 @@ export default function Introduction({initialAnimation=true}: IntroductionProps)
     }
 
     return (
-        <Paper variant='normal' sx={classes.paper}>
+        <ContentBox>
             <Box sx={classes.navigation}>
-                {isPageStart ? <SvgFilterStart /> : <></>}
-                {isHovering ? <SvgFilterHoverIn /> : <SvgFilterHoverOut />}
-                <Box component={'img'} src={'profile2.jpg'} sx={classes.profilePic}
-                onMouseOver={() => handleMouseOver()}
-                onMouseLeave={() => handleMouseLeave()}
-                />
-                <Typography sx={{
-                    gridRowStart: 3,
-                    gridRowEnd: 3,
-                    gridColumnStart: 1,
-                    gridColumnEnd: 3
-                }}
-                variant={'h4'}>Hi! My name is Roee, and I'm a Software Developer
-                </Typography>
-                <ContactIconButtons class={classes.contactIcons} />
-               
-
+                    {isPageStart ? <SvgFilterStart /> : <></>}
+                    {isHovering ? <SvgFilterHoverIn /> : <SvgFilterHoverOut />}
+                    <Box component={'img'} src={'profile2.jpg'} sx={classes.profilePic}
+                    onMouseOver={() => handleMouseOver()}
+                    onMouseLeave={() => handleMouseLeave()}
+                    />
+                    <Typography sx={{
+                        gridRowStart: 3,
+                        gridRowEnd: 3,
+                        gridColumnStart: 1,
+                        gridColumnEnd: 3
+                    }}
+                    variant={'h4'}>Hi! My name is Roee, and I'm a Software Developer
+                    </Typography>
+                    <ContactIconButtons class={classes.contactIcons} />
             </Box>
-        </Paper>
+        </ContentBox>
     )
     
 }

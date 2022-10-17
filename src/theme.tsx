@@ -1,5 +1,7 @@
 import { createTheme } from '@mui/material/styles'
+import type {} from '@mui/lab/themeAugmentation';
 import React from 'react'
+
 
 declare module '@mui/material/Paper' {
     interface PaperPropsVariantOverrides {
@@ -7,6 +9,12 @@ declare module '@mui/material/Paper' {
       background: true;
     }
   }
+
+declare module '@mui/lab/TimelineDot' {
+  interface TimelineDotPropsVariantOverrides {
+    job: true;
+  }
+}
 
 
 
@@ -31,6 +39,17 @@ export const MyTheme = createTheme({
         }
     },
     components: {
+        MuiTimelineDot: {
+            variants: [
+                {
+                    props: {variant: 'job'},
+                    style: {
+                        backgroundColor: '#5E6F81',
+                        borderColor: '#5E6F81'
+                    }
+                }
+            ]
+        },
         MuiPaper: {
             variants: [
                 {
