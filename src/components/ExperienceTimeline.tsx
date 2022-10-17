@@ -14,6 +14,17 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 const data = [
     {
+        role: 'Computer Science BSc',
+        company: 'Technion',
+        workPeriod: '2021 - Present',   
+        description: [
+            {
+                title: 'Frontend Developer',
+                desc: 'using Node & React in order to build growing new web application.'
+            }
+        ]
+    },
+    {
         role: 'Web Developer',
         company: 'Seekret',
         workPeriod: '2021',   

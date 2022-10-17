@@ -45,7 +45,8 @@ export default function SingleJobCard({role, company, description, index}: JobIn
         content: {
             display: 'flex',
             alignItems: 'center',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            backgroundColor: theme.palette.primary.main
         }
     }
 
