@@ -26,7 +26,7 @@ export const MyTheme = createTheme({
         // background colors
         secondary: {
             main: '#CDBDBC',
-            light: '#EEE5E5',
+            light: '#FFFFFF',
             dark: '#CAB5B4'
         },
         info: {
