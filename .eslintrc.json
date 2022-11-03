@@ -4,23 +4,24 @@
         "es2021": true
     },
     "extends": [
-        "eslint:all",
-        "plugin:react/all",
-        "plugin:@typescript-eslint/all"
+        "plugin:react/recommended",
+        "standard-with-typescript"
     ],
     "overrides": [
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
+        "sourceType": "module",
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "project": ["tsconfig.json"]
     },
     "plugins": [
-        "react",
-        "@typescript-eslint"
+        "react"
     ],
     "rules": {
-        "max-len": ["error", { "code": 150 }],
-        "sort-imports": "off"
+        "eqeqeq": "off",
+        "react/jsx-key" : "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/triple-slash-reference": "off",
+        "react/no-unescaped-entities": "off"
     }
 }

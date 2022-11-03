@@ -1,69 +1,67 @@
 import { Box, IconButton, useTheme } from '@mui/material'
 import React, { useState } from 'react'
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import { SvgFilterHoverIn } from './ImageAnimations';
-import ArticleIcon from '@mui/icons-material/Article';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import EmailIcon from '@mui/icons-material/Email'
+import { SvgFilterHoverIn } from './ImageAnimations'
+import ArticleIcon from '@mui/icons-material/Article'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 interface ContactIconButtonsProps {
-    class: Object
+  class: Object
 }
 
 interface StyledIconButtonProps {
-    animationName?: string
-    children: React.ReactNode
+  animationName?: string
+  children: React.ReactNode
 }
 
-function StyledIconButton({animationName='', children}: StyledIconButtonProps) {
-    const [isHovering, setIsHovering] = useState(false)
-    const classes = {
-        icon: {
-            '&:hover': {
-                borderRadius: '50px',
-                backgroundColor: 'transparent',
-                filter: `url(#${animationName})`
+function StyledIconButton ({ animationName = '', children }: StyledIconButtonProps): JSX.Element {
+  const [isHovering, setIsHovering] = useState(false)
+  const classes = {
+    icon: {
+      '&:hover': {
+        borderRadius: '50px',
+        backgroundColor: 'transparent',
+        filter: `url(#${animationName})`
 
-            }
-        }
+      }
     }
+  }
 
-    const setMouseHover = () => {
-        setIsHovering(true)
-    }
+  const setMouseHover = () => {
+    setIsHovering(true)
+  }
 
-    const setMouseLeave = () => {
-        setIsHovering(false)
-    }
-    return (
+  const setMouseLeave = () => {
+    setIsHovering(false)
+  }
+  return (
         <IconButton onMouseEnter={() => setMouseHover()} onMouseLeave={() => setMouseLeave()} sx={classes.icon} size={'small'}>
             {isHovering && <SvgFilterHoverIn />}
             {children}
         </IconButton>
-    )
+  )
 }
 
-export function ContactIconButtons(props: ContactIconButtonsProps) {
-    
-    const theme = useTheme()
-    const classes = {
-        box: {
-            display: 'flex',
-            justifyContent: 'flex-end',
-            marginRight: theme.spacing(1)
+export function ContactIconButtons (props: ContactIconButtonsProps): JSX.Element {
+  const theme = useTheme()
+  const classes = {
+    box: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginRight: theme.spacing(1)
 
-        },
-        icon: {
-            color: theme.palette.primary.main,
-            '&:hover': {
-                backgroundColor: 'transparent'
-            }
-        }
-        }
-    
+    },
+    icon: {
+      color: theme.palette.primary.main,
+      '&:hover': {
+        backgroundColor: 'transparent'
+      }
+    }
+  }
 
-    return (
-        <Box sx={{...classes.box, ...props.class}}>
+  return (
+        <Box sx={{ ...classes.box, ...props.class }}>
             <StyledIconButton animationName='hoverInFilter'>
                 <LinkedInIcon onClick={() => window.open('https://www.linkedin.com/in/roeeseren', '_blank', 'noopener,noreferrer')} sx={classes.icon} />
             </StyledIconButton>
@@ -77,5 +75,5 @@ export function ContactIconButtons(props: ContactIconButtonsProps) {
                 <ArticleIcon sx={classes.icon} />
             </StyledIconButton>
         </Box>
-    )
+  )
 }
