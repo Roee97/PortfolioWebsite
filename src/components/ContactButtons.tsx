@@ -43,7 +43,7 @@ function StyledIconButton ({ animationName = '', children }: StyledIconButtonPro
   )
 }
 
-export function ContactIconButtons (props: ContactIconButtonsProps): JSX.Element {
+export default function ContactIconButtons (props: ContactIconButtonsProps): JSX.Element {
   const theme = useTheme()
   const classes = {
     box: {

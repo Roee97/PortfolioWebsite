@@ -2,7 +2,7 @@ import React from 'react'
 
 export const SvgFilterHoverIn = (): JSX.Element => (
     <svg className="defs-only" style={{ visibility: 'hidden', position: 'absolute' }}>
-        <filter colorInterpolationFilters="srgb" x="0" y="0" height="100%" width="100%" id="hoverInFilter">
+        <filter colorInterpolationFilters="sRGB" x="0" y="0" height="100%" width="100%" id="hoverInFilter">
             <feColorMatrix type="matrix">
                         <animate
                 attributeType="XML"
@@ -21,7 +21,7 @@ export const SvgFilterHoverIn = (): JSX.Element => (
 
 export const SvgFilterHoverOut = (): JSX.Element => (
     <svg className="defs-only" style={{ visibility: 'hidden', position: 'absolute' }}>
-        <filter colorInterpolationFilters="srgb" x="0" y="0" height="100%" width="100%" id="hoverOutFilter">
+        <filter colorInterpolationFilters="sRGB" x="0" y="0" height="100%" width="100%" id="hoverOutFilter">
             <feColorMatrix type="matrix">
                         <animate
                 attributeType="XML"
@@ -40,7 +40,7 @@ export const SvgFilterHoverOut = (): JSX.Element => (
 
 export const SvgFilterStart = (): JSX.Element => (
     <svg className="defs-only" style={{ visibility: 'hidden', position: 'absolute' }}>
-        <filter colorInterpolationFilters="srgb" x="0" y="0" height="100%" width="100%" id="startFilter">
+        <filter colorInterpolationFilters="sRGB" x="0" y="0" height="100%" width="100%" id="startFilter">
             <feColorMatrix type="matrix">
                         <animate
                 attributeType="XML"

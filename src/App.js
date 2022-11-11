@@ -7,6 +7,8 @@ import { ThemeProvider } from '@mui/material/styles'
 import VerticalSwitchAnimation from './components/VerticalSwitchAnimation.tsx'
 import ExperienceTimeline from './components/ExperienceTimeline.tsx'
 import BackgroundAninmation from './components/BackgroundAnimation.tsx'
+import InformationComponentsWrapper from './components/InformationComponentsWrapper'
+// import WebFont from 'webfontloader'
 
 const theme = MyTheme
 
@@ -21,6 +23,14 @@ function App () {
     }
   }
 
+  // useEffect(() => {
+  //   WebFont.load({
+  //     google: {
+  //       families: ['Merienda']
+  //     }
+  //   })
+  // }, [])
+
   return (
       <ThemeProvider theme={theme}>
         <Paper sx={classes.mainPaper}
@@ -28,7 +38,8 @@ function App () {
           >
             <div style={{ marginRight: '15vw' }}></div>
           <VerticalSwitchAnimation
-          upperChild={<Introduction/>}
+          // upperChild={<Introduction/>}
+          upperChild={<InformationComponentsWrapper />}
           duringAnimationUpperChild={<Introduction initialAnimation={false} />}
           lowerChild={<ExperienceTimeline />}
           initialComponent='upper'

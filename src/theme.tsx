@@ -14,10 +14,17 @@ declare module '@mui/lab/TimelineDot' {
   }
 }
 
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    property: true
+    propertyHeadline: true
+  }
+}
+
 export const MyTheme = createTheme({
   palette: {
     primary: {
-      main: '#5E6F81'
+      main: '#695D6F'
     },
     // background colors
     secondary: {
@@ -30,6 +37,10 @@ export const MyTheme = createTheme({
     }
   },
   typography: {
+    fontFamily: [
+      'Merienda',
+      'Merienda-Bold'
+    ].join(','),
     h4: {
       color: '#281F1B'
     }
@@ -58,6 +69,25 @@ export const MyTheme = createTheme({
           props: { variant: 'background' },
           style: {
             backgroundColor: '#EEE5E5'
+          }
+        }
+      ]
+    },
+    MuiTypography: {
+      variants: [
+        {
+          props: { variant: 'property' },
+          style: {
+            color: '#695D6F',
+            fontFamily: 'Merienda'
+          }
+        },
+        {
+          props: { variant: 'propertyHeadline' },
+          style: {
+            color: '#695D6F',
+            fontSize: '3rem',
+            fontFamily: 'Merienda'
           }
         }
       ]

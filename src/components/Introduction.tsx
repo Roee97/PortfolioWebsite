@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { ContactIconButtons } from './ContactButtons'
+import ContactIconButtons from './ContactButtons'
 import ContentBox from './ContentBox'
 import { SvgFilterHoverIn, SvgFilterHoverOut, SvgFilterStart } from './ImageAnimations'
 
